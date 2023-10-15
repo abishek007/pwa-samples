@@ -1,13 +1,15 @@
 function handleFileShare(evt) {
-    evt.responseWith(Response.redirect("/?share-target"))
+    try {
+      evt.responseWith(Response.redirect("./"))
 
-    evt.waitUntil(async function() {
-        const data = await evt.request.formData();
-        const client = await self.clients.get(evt.resultingClientId);
-        const file = data.get('file');
-
-        client.postMessage({ file });
-    })
+      evt.waitUntil(async function() {
+          const data = await evt.request.formData();
+          const client = await self.clients.get(evt.resultingClientId);
+          const file = data.get('file');
+  
+          client.postMessage({ file });
+      })
+    } catch {}
 }
 
 self.addEventListener('install', evt => {
@@ -17,7 +19,7 @@ self.addEventListener('install', evt => {
 self.addEventListener('fetch', evt => {
   const url = new URL(evt.request.url);
 
-  if (url.origin === location.origin && url.searchParams.has("share-target") && evt.request.method === 'POST') {
+  if (evt.request.method === 'POST') {
     handleFileShare(evt);
   }
 });
