@@ -4,14 +4,15 @@ if('serviceWorker' in navigator){
         console.log('service worker registered', reg)
         navigator.serviceWorker.onmessage = (evt) => {
             const file  = evt?.data?.file;
-            const img = new Image();
-            const url = URL.createObjectURL(file);
+            alert(file);
+            // const img = new Image();
+            // const url = URL.createObjectURL(file);
 
-            img.src = url;
+            // img.src = url;
 
-            if (img?.src) {
-                document.body.append(img);
-            }
+            // if (img?.src) {
+            //     document.body.append(img);
+            // }
         }
     })
     .catch(err => console.log('service worker not registered', err));
