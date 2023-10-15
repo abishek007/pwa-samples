@@ -1,0 +1,59 @@
+{
+    "name": "PyConGPT",
+    "short_name": "PyConGPT",
+    "description": "PyConGPT is here to assist you throughout PyCon India 2023. Whether you need information about event schedules, speaker details, sessions, etc., we've got you covered.",
+    "start_url": "/",
+    "display": "standalone",
+    "orientation": "portrait",
+    "icons": [
+        {
+            "src": "/images/pwa/launcher_96x96.png",
+            "sizes": "96x96",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/pwa/launcher_144x144.png",
+            "sizes": "144x144",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/pwa/launcher_192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "/images/pwa/launcher_512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "purpose": "maskable",
+            "src": "/images/pwa/launcher_512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "purpose": "maskable",
+            "src": "/images/pwa/launcher_192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        }
+    ],
+    "background_color": "#000000",
+    "theme_color": "#000000",
+    "share_target": {
+        "action": "/?utm_medium=PWA&utm_source=share-target&share-target",
+        "method": "POST",
+        "enctype": "multipart/form-data",
+        "params": {
+            "files": [
+                {
+                    "name": "file",
+                    "accept": [
+                        "image/*"
+                    ]
+                }
+            ]
+        }
+    }
+}
