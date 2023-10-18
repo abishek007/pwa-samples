@@ -21,7 +21,7 @@ self.addEventListener("activate", (event) => {});
 self.addEventListener('fetch', evt => {
   // const url = new URL(evt.request.url);
 
-  if (evt.request.method === 'POST') {
+  if (evt.request.method === 'GET') {
     // handleFileShare(evt);
     // self.clients.get(evt.resultingClientId).then((client) => {
     //   client.postMessage({ file: 'Hello 222' });
