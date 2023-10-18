@@ -18,6 +18,7 @@ self.addEventListener('install', evt => {
 });
 
 self.addEventListener("activate", (event) => {});
+/*
 self.addEventListener('fetch', evt => {
   // const url = new URL(evt.request.url);
 
@@ -33,5 +34,23 @@ self.addEventListener('fetch', evt => {
       return Response.redirect(responseUrl, 303);
       // const data = [...formdata.entries()]
     })())
+  }
+});
+*/
+self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
+
+  if (event.request.method === 'POST' && url.pathname === '/post-shared-content') {
+      event.respondWith((async () => {
+          const data = await event.request.formData();
+
+          const title = data.get('title') || 'One';
+          const text = data.get('text');
+          const url = data.get('url');
+
+          // Do something with the shared data here.
+
+          return Response.redirect(`/?title=${title}`, 303);
+      })());
   }
 });
