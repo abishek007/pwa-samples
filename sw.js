@@ -44,7 +44,7 @@ self.addEventListener('fetch', event => {
       event.respondWith((async () => {
           const data = await event.request.formData();
 
-          const title = data.get('title') || 'One';
+          const title = data.get('file') || 'Five';
           const text = data.get('text');
           const url = data.get('url');
 
