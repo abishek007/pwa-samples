@@ -26,10 +26,10 @@ self.addEventListener('fetch', evt => {
     // self.clients.get(evt.resultingClientId).then((client) => {
     //   client.postMessage({ file: 'Hello 222' });
     // })
-    evt.responseWith((async () => {
-      const formdata = await evt.request.formData();
-      const title = formdata.get('title') || 'One';
-      const responseUrl = `/?title=${title}`
+    evt.responseWith((() => {
+      // const formdata = await evt.request.formData();
+      // const title = formdata.get('title') || 'One';
+      const responseUrl = `/?title=One`
       return Response.redirect(responseUrl, 303);
       // const data = [...formdata.entries()]
     })())
