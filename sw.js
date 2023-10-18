@@ -13,6 +13,7 @@
 // }
 
 self.addEventListener('install', evt => {
+  self.skipWaiting();
   console.log('service worker installed');
 });
 
@@ -23,14 +24,14 @@ self.addEventListener('fetch', evt => {
   if (evt.request.method === 'POST') {
     // handleFileShare(evt);
     // self.clients.get(evt.resultingClientId).then((client) => {
-    //   client.postMessage({ file: 'Hello 111' });
+    //   client.postMessage({ file: 'Hello 222' });
     // })
     evt.responseWith((async () => {
       const formdata = await evt.request.formData();
-      // const data = [...formdata.entries()]
       const title = formdata.get('title') || 'One';
       const responseUrl = `/?title=${title}`
       return Response.redirect(responseUrl, 303);
+      // const data = [...formdata.entries()]
     })())
   }
 });
