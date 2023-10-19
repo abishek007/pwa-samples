@@ -21,10 +21,17 @@ if('serviceWorker' in navigator){
 const url = new URL(window.location.href);
 
 // Get the value of the 'title' query parameter
-const title = url.searchParams.get('title');
+const title = url.searchParams.get('title') || '';
 // Check if 'title' exists and display it
 const ele = document.getElementById('txt');
-ele.innerText = title;
+const imgElement = document.createElement('img');
+// ele.innerText = title;
+// const img = new Image();
+// const url = URL.createObjectURL(title);
+imgElement.src = URL.createObjectURL(title);
+if (imgElement && imgElement.src) {
+  ele.appendChild(imgElement);
+}
 if (title) {
   console.log("Value of 'title' query parameter:", title);
 } else {
