@@ -3,8 +3,8 @@ if('serviceWorker' in navigator){
     .then(reg => {
         console.log('service worker registered', reg)
         navigator.serviceWorker.onmessage = (evt) => {
-            const file  = evt?.data?.file;
-            alert(file);
+            // const file  = evt?.data?.file;
+            // alert(file);
             // const img = new Image();
             // const url = URL.createObjectURL(file);
             // img.src = url; 
@@ -23,16 +23,21 @@ const title = url.searchParams.get('title') || '';
 // Check if 'title' exists and display it
 const ele = document.getElementById('txt');
 const imgElement = document.createElement('img');
-ele.innerText = title;
+// ele.innerText = title;
 // const img = new Image();
 // const url = URL.createObjectURL(title);
 
-// if (title && title[0]) {
-//   imgElement.src = URL.createObjectURL(title[0]);
-//   if (imgElement && imgElement.src) {
-//     ele.appendChild(imgElement);
-//   }
-// }
+if (title && title[0]) {
+  ele.innerText = 'one'
+  const temp = URL.createObjectURL(title[0]);
+  if (temp) {
+    ele.innerText = temp;
+  }
+  // imgElement.src = URL.createObjectURL(title[0]);
+  if (imgElement && imgElement.src) {
+    ele.appendChild(imgElement);
+  }
+}
 
 if (title) {
   console.log("Value of 'title' query parameter:", title);
