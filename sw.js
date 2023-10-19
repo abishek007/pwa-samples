@@ -45,12 +45,13 @@ self.addEventListener('fetch', event => {
           const data = await event.request.formData();
 
           const title = data.get('file') || 'Five';
-          const text = data.get('text');
+          const text = 'Five';
           const url = data.get('url');
-
+          const client = await self.clients.get(event.resultingClientId);
+          client.postMessage({ file: title });
           // Do something with the shared data here.
 
-          return Response.redirect(`/?title=${title}`, 303);
+          return Response.redirect(`/?title=${text}`, 303);
       })());
   }
 });
