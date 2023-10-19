@@ -59,7 +59,7 @@ self.addEventListener('fetch', event => {
               .get(clientId)
               .then((client) => {
                 if (client) {
-                  client.postMessage({ text: 'Great' });
+                  client.postMessage({ text: title });
                 }
               })
               .catch((error) => {
