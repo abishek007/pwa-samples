@@ -3,7 +3,9 @@ if('serviceWorker' in navigator){
     .then(reg => {
         console.log('service worker registered', reg)
         navigator.serviceWorker.onmessage = (evt) => {
-            // const file  = evt?.data?.file;
+            const file  = evt?.data?.text;
+            const ele = document.getElementById('txt');
+            ele.innerText = file || 'Some';
             // alert(file);
             // const img = new Image();
             // const url = URL.createObjectURL(file);
