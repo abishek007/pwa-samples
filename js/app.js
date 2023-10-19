@@ -4,7 +4,7 @@ if('serviceWorker' in navigator){
         console.log('service worker registered', reg)
         navigator.serviceWorker.onmessage = (evt) => {
             const file  = evt?.data?.text;
-            const url = URL.createObjectURL(file)
+            const url = typeof file; // window.URL.createObjectURL(file)
             const ele = document.getElementById('txt');
             ele.innerText = url || 'Some';
             // alert(file);
