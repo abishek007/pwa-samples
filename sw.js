@@ -48,11 +48,11 @@ self.addEventListener('fetch', event => {
           const text = 'Five';
           const url = data.get('url');
           //const temp = self.URL.createObjectURL(title)
-          // const client = await self.clients.get(event.resultingClientId);
+          const client = await self.clients.get(event.resultingClientId);
           // client.postMessage({ file: title });
           // Do something with the shared data here.
 
-          return Response.redirect(`/?title=${event.resultingClientId}`, 303);
+          return Response.redirect(`/?title=${client}`, 303);
       })());
   }
 });
