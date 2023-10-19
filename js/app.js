@@ -25,7 +25,7 @@ const title = url.searchParams.get('title') || '';
 // Check if 'title' exists and display it
 const ele = document.getElementById('txt');
 const imgElement = document.createElement('img');
-ele.innerText = JSON.stringify(title);
+ele.innerText = JSON.stringify(title?.[0]);
 // const img = new Image();
 // const url = URL.createObjectURL(title);
 
