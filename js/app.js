@@ -23,13 +23,14 @@ const title = url.searchParams.get('title') || '';
 // Check if 'title' exists and display it
 const ele = document.getElementById('txt');
 const imgElement = document.createElement('img');
-// ele.innerText = title;
+ele.innerText = title || "Happy";
 // const img = new Image();
 // const url = URL.createObjectURL(title);
 
+/*
 if (title && title[0]) {
-  ele.innerText = 'one'
-  const temp = URL.createObjectURL(title[0]);
+  ele.innerText = 'two'
+  const temp = URL.createObjectURL(title);
   if (temp) {
     ele.innerText = temp;
   }
@@ -38,6 +39,7 @@ if (title && title[0]) {
     ele.appendChild(imgElement);
   }
 }
+*/
 
 if (title) {
   console.log("Value of 'title' query parameter:", title);
