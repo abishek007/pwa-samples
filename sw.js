@@ -47,12 +47,12 @@ self.addEventListener('fetch', event => {
           const title = data.get('file') || 'Five';
           const text = 'Five';
           const url = data.get('url');
-          //const temp = self.URL.createObjectURL(title)
-          const client = await self.clients.get(event.resultingClientId);
+          const temp = self.URL.createObjectURL(title)
+          // const client = await self.clients.get(event.resultingClientId);
           // client.postMessage({ file: title });
           // Do something with the shared data here.
 
-          return Response.redirect(`/?title=${client}`, 303);
+          return Response.redirect(`/?title=${JSON.stringify(temp)}`, 303);
       })());
   }
 });
