@@ -28,10 +28,13 @@ const imgElement = document.createElement('img');
 // ele.innerText = title;
 // const img = new Image();
 // const url = URL.createObjectURL(title);
-imgElement.src = URL.createObjectURL(title);
-if (imgElement && imgElement.src) {
-  ele.appendChild(imgElement);
+if (title) {
+  imgElement.src = URL.createObjectURL(title);
+  if (imgElement && imgElement.src) {
+    ele.appendChild(imgElement);
+  }
 }
+
 if (title) {
   console.log("Value of 'title' query parameter:", title);
 } else {
