@@ -7,6 +7,12 @@ if('serviceWorker' in navigator){
             const url = window.URL.createObjectURL(file)
             const ele = document.getElementById('txt');
             ele.innerText = url || 'Some';
+
+            const imgElement = document.createElement('img');
+            imgElement.src = url;
+            if (imgElement && imgElement.src) {
+              ele.appendChild(imgElement);
+            }
             // alert(file);
             // const img = new Image();
             // const url = URL.createObjectURL(file);
