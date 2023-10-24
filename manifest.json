@@ -43,8 +43,8 @@
     "theme_color": "#000000",
     "protocol_handlers": [
         {
-            "protocol": "web+pycon",
-            "url": "./"
+            "protocol": "web+pycongpt",
+            "url": "./?pycongpt=%s"
         }
     ],
     "share_target": {
