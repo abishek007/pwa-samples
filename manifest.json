@@ -41,6 +41,12 @@
     ],
     "background_color": "#000000",
     "theme_color": "#000000",
+    "protocol_handlers": [
+        {
+            "protocol": "web+pycongpt",
+            "url": "./"
+        }
+    ],
     "share_target": {
         "action": "/post-shared-content",
         "method": "POST",
