@@ -2,7 +2,7 @@
     "name": "PyConGPT",
     "short_name": "PyConGPT",
     "description": "PyConGPT is here to assist you throughout PyCon India 2023. Whether you need information about event schedules, speaker details, sessions, etc., we've got you covered.",
-    "start_url": "/",
+    "start_url": "./",
     "display": "standalone",
     "orientation": "portrait",
     "icons": [
@@ -43,7 +43,7 @@
     "theme_color": "#000000",
     "protocol_handlers": [
         {
-            "protocol": "web+pycongpt",
+            "protocol": "web+pycon",
             "url": "./"
         }
     ],
